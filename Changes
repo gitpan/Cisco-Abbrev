@@ -1,5 +1,8 @@
 Revision history for Cisco-Abbrev
 
-0.01    Date/time
+0.02	2009-01-16
+	Added support for "EOBC" virtual interface.
+
+0.01    2008-07-31
         First version, released on an unsuspecting world.
 

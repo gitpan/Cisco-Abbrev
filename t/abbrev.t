@@ -50,6 +50,8 @@ Virtual-Template25	Vt25
 Pos-channel5		PosCh5
 Fddi8/2			FD8/2
 
+EOBC0/0			EO0/0
+
 MFR8			MFR8
 Async5			Async5
 Group-Async5		Group-Async5

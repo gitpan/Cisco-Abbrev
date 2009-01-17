@@ -9,11 +9,11 @@ Cisco::Abbrev - Translate to/from Cisco Interface Abbreviations
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -48,6 +48,7 @@ our %LONG = (
     'Lo' => 'Loopback',
     'Vi' => 'Virtual-Access',
     'Vt' => 'Virtual-Template',
+    'EO'  => 'EOBC',
 
     'Se' => 'Serial',
     'PO' => 'POS',
