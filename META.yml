@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Cisco-Abbrev
-version:            0.02
+version:            0.03
 abstract:           Translate to/from Cisco Interface Abbreviations
 author:
     - kevin brintnall <kbrint@rufus.net>

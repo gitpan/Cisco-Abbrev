@@ -9,11 +9,11 @@ Cisco::Abbrev - Translate to/from Cisco Interface Abbreviations
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 =head1 SYNOPSIS
@@ -39,6 +39,7 @@ our %LONG = (
     'Gi' => 'GigabitEthernet',
     'Te' => 'TenGigabitEthernet',
     'Et' => 'Ethernet',
+    'Eth' => 'Ethernet',
     'Vl' => 'Vlan',
     'FD' => 'Fddi',
     'PortCh' => 'Port-channel',
@@ -63,6 +64,7 @@ our %LONG = (
 
 our %ABBREV = reverse %LONG;
 $ABBREV{'Port-channel'} = 'Po';  ## ambiguous
+$ABBREV{'Ethernet'    } = 'Et';  ## ambiguous
 
 ## valid interface names and abbreviations match this regexp.
 our $VALID = qr(^[A-Z][-A-Za-z\d/:.]+$)o;

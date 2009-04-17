@@ -10,7 +10,13 @@ use Test::More;
 my @tests = map { chomp; [ split /\s+/ ] } grep /\S/, <DATA>;
 my @lame = (undef, 'whatever', '1/42', '');
 
-plan tests => 1 + 2*@tests + 2*@lame;
+## can't be done in both directions.. just short --> long
+my %ambiguous = (
+    'PortCh5' => 'Port-channel5',
+    'Eth0/5'  => 'Ethernet0/5',
+);
+
+plan tests => keys(%ambiguous) + 2*@tests + 2*@lame;
 
 for my $test (@tests)
 {
@@ -21,7 +27,10 @@ for my $test (@tests)
 }
 
 ## funky case of ambiguous abbrevs (depends on software version)
-is(cisco_long_int('PortCh5'), 'Port-channel5', 'long(PortCh5) = Port-channel5');
+while (my ($short, $long) = each %ambiguous)
+{
+    is(cisco_long_int($short), $long, "long($short) = '$long'");
+}
 
 ## handle undef inputs
 for my $lame (@lame)
